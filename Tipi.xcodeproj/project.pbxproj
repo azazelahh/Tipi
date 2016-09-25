@@ -14,6 +14,8 @@
 		0FE34E3F1D9729A70024178E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE34E3D1D9729A70024178E /* LaunchScreen.storyboard */; };
 		0FE34E4A1D9729A70024178E /* TipiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE34E491D9729A70024178E /* TipiTests.swift */; };
 		0FE34E551D9729A70024178E /* TipiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE34E541D9729A70024178E /* TipiUITests.swift */; };
+		0FE34E631D973FDC0024178E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE34E621D973FDC0024178E /* SettingsViewController.swift */; };
+		0FE34E691D9771C60024178E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0FE34E681D9771C60024178E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		0FE34E501D9729A70024178E /* TipiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE34E541D9729A70024178E /* TipiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipiUITests.swift; sourceTree = "<group>"; };
 		0FE34E561D9729A70024178E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FE34E621D973FDC0024178E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0FE34E681D9771C60024178E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				0FE34E341D9729A70024178E /* AppDelegate.swift */,
 				0FE34E361D9729A70024178E /* ViewController.swift */,
 				0FE34E381D9729A70024178E /* Main.storyboard */,
+				0FE34E681D9771C60024178E /* README.md */,
+				0FE34E621D973FDC0024178E /* SettingsViewController.swift */,
 				0FE34E3B1D9729A70024178E /* Assets.xcassets */,
 				0FE34E3D1D9729A70024178E /* LaunchScreen.storyboard */,
 				0FE34E401D9729A70024178E /* Info.plist */,
@@ -258,6 +264,8 @@
 			files = (
 				0FE34E371D9729A70024178E /* ViewController.swift in Sources */,
 				0FE34E351D9729A70024178E /* AppDelegate.swift in Sources */,
+				0FE34E691D9771C60024178E /* README.md in Sources */,
+				0FE34E631D973FDC0024178E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tipi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Olya.Tipi;
@@ -410,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tipi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Olya.Tipi;

@@ -10,9 +10,45 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var billField: UITextField!
+    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var tipControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        billField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(billField.text, forKey: "lastBill")
+        defaults.synchronize()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool){
+        super.viewWillAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaultPercentIndex = defaults.integerForKey("defaultPercentIndex")
+        
+        tipControl.selectedSegmentIndex = defaultPercentIndex
+        let lastBill = defaults.objectForKey("lastBill") as! String
+        
+        if(lastBill.isEmpty)
+        {
+            billField.text = lastBill
+        }
+        
+        calculateTip(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +57,20 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func calculateTip(sender: AnyObject) {
+        
+        let tipPercents = [ 0.18, 0.20, 0.25 ]
+        
+        let bill = Double(billField.text!) ?? 0
+        let tip = bill * tipPercents[tipControl.selectedSegmentIndex]
+        let total = bill + tip
+        
+        tipLabel.text = String.init(format: "$%.2f", tip)
+        totalLabel.text = String.init(format: "$%.2f", total)
+    }
 }
 
